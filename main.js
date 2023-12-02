@@ -21,9 +21,9 @@ function createTableRow(person) {
   const phoneTd = document.createElement("td");
   const locationTd = document.createElement("td");
   const jobTd = document.createElement("td");
-  const actionsTd = document.createElement("td");
-
   const activeTd = document.createElement("td");
+
+  const actionsTd = document.createElement("td");
   const updateButton = document.createElement("button");
   const deleteButton = document.createElement("button");
   updateButton.textContent = "Update";
@@ -39,8 +39,7 @@ function createTableRow(person) {
   
   updateButton.addEventListener("click", () => fillUpdateForm(person.id));
   deleteButton.addEventListener("click", () => deletePerson(person.id));
-  activeTd.appendChild(updateButton);
-  activeTd.appendChild(deleteButton);
+  actionsTd.appendChild(buttonContainer);
 
   idTd.textContent = person.id;
   nameTd.textContent = person.name;
@@ -63,9 +62,7 @@ function createTableRow(person) {
   tableRow.appendChild(locationTd);
   tableRow.appendChild(jobTd)
   tableRow.appendChild(activeTd);
-  tableRow.appendChild(buttonContainer);
-  tableRow.appendChild(updateButton);
-  tableRow.appendChild(deleteButton);
+  tableRow.appendChild(actionsTd);
 
   return tableRow;
 }
@@ -100,7 +97,7 @@ function listWorkersTable() {
   const workersTable = document.getElementById("workersTable");
   fetch(api_url).then(httpResponse => httpResponse.json())
     .then(responseBody => {
-      workersTable.innerHTML = "";
+      workersTable.textContent = "";
       responseBody.forEach(person => {
         const tableRow = createTableRow(person);
         workersTable.appendChild(tableRow);
