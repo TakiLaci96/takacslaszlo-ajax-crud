@@ -1,0 +1,15 @@
+body {
+    background-color: aqua;
+}
+
+.hiddenButton {
+    display: none;
+}
+
+.button-container {
+    display: flex;
+}
+
+.button-container button {
+    margin-right: 5px; /* Opcionális: kis térköz a gombok között */
+  }

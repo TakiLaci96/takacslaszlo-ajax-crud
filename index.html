@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <title>Ajax-Crud</title>
+</head>
+
+<body class="container">
+  <div id="app">
+    <div>
+      <form id="workerForm" class="form-horizontal">
+        <div class="card">
+          <div class="card-header">
+            <h2>List of workers</h2>
+          </div>
+          <input type="hidden" id="id">
+          <div class="card-body">
+            <div class="form-group mb-3">
+              <label for="name" class="form-label">Full Name: </label>
+              <input type="text" id="name" placeholder="Full name" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">E-mail Address: </label>
+              <input type="email" id="email" placeholder="E-mail address" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone Number: </label>
+              <input type="tel" id="phone_number" placeholder="Phone number" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="location" class="form-label">Location: </label>
+              <input type="text" id="location" placeholder="Location" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="jobTitle" class="form-label">Job Title:</label>
+              <input type="text" id="job_title" placeholder="Job Title" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="activeWorker" class="form-label">Active worker: </label>
+              <input type="checkbox" id="active_worker">
+            </div>
+          </div>
+          <div class="d-grid gap-1">
+            <button type="submit" id="submitButton" class="btn btn-primary">Submit</button>
+            <button type="submit" id="updateButton" class="hiddenButton btn btn-primary">Update</button>
+            <button type="reset" id="resetButton" class="btn btn-secondary">Reset</button>
+          </div>
+
+      </form>
+    </div>
+
+    <table class="table table-striped table-hover ">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>E-mail</th>
+          <th>Phone Number</th>
+          <th>Location</th>
+          <th>Job Title</th>
+          <th>Active Worker</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="workersTable"></tbody>
+    </table>
+  </div>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
