@@ -1,6 +1,3 @@
-// Sajnos az update-delete párost nem sikerült egymás mellé helyeznem, gondolom ezért ilyen a design is.
-// Esetleg a checkboxok még középrezártak lehetnének... :D 
-
 import "./style.css";
 const api_url = "https://retoolapi.dev/p0j7Ne/workers";
 
@@ -22,6 +19,7 @@ function createTableRow(person) {
   const locationTd = document.createElement("td");
   const jobTd = document.createElement("td");
   const activeTd = document.createElement("td");
+  activeTd.classList.add("activeTd");
 
   const actionsTd = document.createElement("td");
   const updateButton = document.createElement("button");

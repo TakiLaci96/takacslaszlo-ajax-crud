@@ -12,4 +12,8 @@ body {
 
 .button-container button {
     margin-right: 5px; /* Opcionális: kis térköz a gombok között */
-  }
+}
+
+.activeTd {
+    text-align: center;
+}
